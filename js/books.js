@@ -11,7 +11,7 @@ const loadSearchBooks = () => {
     info.textContent = '';
     searchResult.textContent = '';
     if (searchVal === '') {
-        info.innerHTML = `<h2 class="text-center mb-5">please search a book name`;
+        info.innerHTML = `<h2 class="text-center mb-5">Please search a <span class="text-danger">book</span> name`;
     } else {
         spinner.classList.remove('d-none');
         fetch(`https://openlibrary.org/search.json?q=${searchVal}`)
@@ -37,7 +37,7 @@ const displaySearchBooks = (booksFound, booksArray) => {
                     <div class="card h-100">
                          ${book.cover_i ? bookUrl : `<img height="400" src="../images/download.png" class="card-img-top" alt="">`}
                         <div class="card-body">
-                            <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
+                            <h5 class="card-title mb-4"><span class="fw-bold">Book Name: </span>${book.title}</h5>
                             <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
                             <p class="text-success"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
@@ -59,7 +59,7 @@ const displaySearchBooks = (booksFound, booksArray) => {
                     <div class="card h-100">
                         ${book.cover_i ? bookUrl : `<img height="350" src="../images/download.png" class="card-img-top" alt="">`}
                         <div class="card-body">
-                            <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
+                            <h5 class="card-title mb-4"><span class="fw-bold">Book Name: </span>${book.title}</h5>
                             <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
                             <p class="text-success"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
