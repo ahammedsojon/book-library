@@ -22,7 +22,7 @@ const loadSearchBooks = () => {
 
 const displaySearchBooks = (booksFound, booksArray) => {
     // display search result found number of books
-    info.innerHTML = `<h2 class="text-center mb-5">Search result found: ${booksFound.num_found} Books`;
+    info.innerHTML = `<h2 class="text-center mb-5">Search result found: <span class="text-danger">${booksFound.num_found}</span> Books`;
     searchResult.classList.add('d-none');
 
     // if search result more than 30
@@ -36,15 +36,13 @@ const displaySearchBooks = (booksFound, booksArray) => {
             bookDiv.classList.add('col');
             bookDiv.innerHTML = `
                     <div class="card h-100">
-    
-                    ${book.cover_i ? bookUrl : `<img height="400" src="../images/download.png" class="card-img-top" alt="">`}
-    
+                         ${book.cover_i ? bookUrl : `<img height="400" src="../images/download.png" class="card-img-top" alt="">`}
                         <div class="card-body">
                             <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
                             <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
-                            <p class="text-warning"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
+                            <p class="text-success"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
-                    </div>
+                     </div>
                 `;
             searchResult.appendChild(bookDiv);
             spinner.classList.add('d-none');
@@ -64,7 +62,7 @@ const displaySearchBooks = (booksFound, booksArray) => {
                         <div class="card-body">
                             <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
                             <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
-                            <p class="text-warning"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
+                            <p class="text-success"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
                     </div>
                     `;
