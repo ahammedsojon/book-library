@@ -30,7 +30,6 @@ const displaySearchBooks = (booksFound, booksArray) => {
         spinner.classList.remove('d-none');
         const books = booksArray.slice(0, 30);
         books.forEach(book => {
-            console.log(book);
             const bookUrl = `<img height="400" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="">`;
             const bookDiv = document.createElement('div');
             bookDiv.classList.add('col');
