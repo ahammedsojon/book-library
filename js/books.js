@@ -27,7 +27,7 @@ const displaySearchBooks = (booksFound, booksArray) => {
 
     // if search result more than 30
     if (booksArray.length > 30) {
-        spinner.classList.remove('d-none')
+        spinner.classList.remove('d-none');
         const books = booksArray.slice(0, 30);
         books.forEach(book => {
             console.log(book);
@@ -41,13 +41,13 @@ const displaySearchBooks = (booksFound, booksArray) => {
     
                         <div class="card-body">
                             <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
-                            <p class=""><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
+                            <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
                             <p class="text-warning"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
                     </div>
                 `;
             searchResult.appendChild(bookDiv);
-            spinner.classList.add('d-none')
+            spinner.classList.add('d-none');
             searchResult.classList.remove('d-none');
         })
     }
@@ -63,18 +63,18 @@ const displaySearchBooks = (booksFound, booksArray) => {
                         ${book.cover_i ? bookUrl : `<img height="350" src="../images/download.png" class="card-img-top" alt="">`}
                         <div class="card-body">
                             <h5 class="card-title"><span class="fw-bold">Book Name: </span>${book.title}</h5>
-                            <p class=""><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
+                            <p class="text-danger"><span class="fw-bold">First Published: </span>${book.first_publish_year ? book.first_publish_year : 'Not Found'}</p>
                             <p class="text-warning"><span class="fw-bold">Author Name: </span>${book.author_name ? book.author_name[0] : 'Not Found'}</p>
                         </div>
                     </div>
                     `;
             searchResult.appendChild(bookDiv);
-            spinner.classList.add('d-none')
+            spinner.classList.add('d-none');
             searchResult.classList.remove('d-none');
         })
     }
     // if search result empty
     else {
-        spinner.classList.add('d-none')
+        spinner.classList.add('d-none');
     }
 }
